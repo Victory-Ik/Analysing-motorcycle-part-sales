@@ -40,16 +40,5 @@ ORDER BY product_line, month, net_revenue DESC;
 ```
 
 ## 📊 Expected Output  
-| product_line | month  | warehouse | net_revenue |
-|-------------|--------|-----------|-------------|
-| Product A   | June   | North     | $XX,XXX     |
-| Product B   | June   | West      | $XX,XXX     |
-| ...         | ...    | ...       | ...         |
-
-
-## 📌 Key Learnings  
-- Using `TO_CHAR()` to format date values  
-- Applying `SUM()` for revenue aggregation  
-- Structuring SQL queries for performance optimization  
-- Sorting results for better insights  
+[datalab_export_2025-03-10 14_59_39.xlsx](https://github.com/user-attachments/files/19165342/datalab_export_2025-03-10.14_59_39.xlsx)
 
