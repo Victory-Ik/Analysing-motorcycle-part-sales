@@ -29,6 +29,6 @@ The main query performs the following operations:
 ## 📌 SQL Query  
 <img width="911" alt="Image" src="https://github.com/user-attachments/assets/b6b84ed7-d590-44bf-a703-2d5a9b5e07fd" />
 
-## 📊 Expected Output  
+## 📊  Output  
 [datalab_export_2025-03-10 14_59_39.xlsx](https://github.com/user-attachments/files/19165342/datalab_export_2025-03-10.14_59_39.xlsx)
 
