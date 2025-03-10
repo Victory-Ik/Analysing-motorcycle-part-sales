@@ -27,16 +27,29 @@ The main query performs the following operations:
 5. **Sorts the final output**  
 
 ## 📌 SQL Query  
-```sql
-SELECT 
-    product_line,
-    TO_CHAR(date, 'Month') AS month,
-    warehouse,
-    SUM(total - payment_fee) AS net_revenue
-FROM sales
-WHERE client_type = 'Wholesale'
-GROUP BY product_line, month, warehouse
-ORDER BY product_line, month, net_revenue DESC;
+WITH formatted_sales AS (
+     SELECT 
+         product_line,
+         CASE 
+             WHEN TO_CHAR(date, 'MM') = '06' THEN 'June'
+             WHEN TO_CHAR(date, 'MM') = '07' THEN 'July'
+             WHEN TO_CHAR(date, 'MM') = '08' THEN 'August'
+         END AS month,
+         warehouse,
+         SUM(total) - SUM(payment_fee) AS net_revenue
+     FROM sales
+     WHERE client_type = 'Wholesale'
+     GROUP BY product_line, month, warehouse
+ )
+ SELECT * 
+ FROM formatted_sales
+ ORDER BY product_line, 
+          CASE month 
+             WHEN 'June' THEN 1 
+             WHEN 'July' THEN 2 
+             WHEN 'August' THEN 3 
+          END, 
+          net_revenue DESC;
 ```
 
 ## 📊 Expected Output  
